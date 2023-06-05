@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: recipeapp_development
+  username: postgres
+  password: ankara
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +60,8 @@ development:
 test:
   <<: *default
   database: recipeapp_test
+  username: postgres
+  password: ankara
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,5 +86,5 @@ test:
 production:
   <<: *default
   database: recipeapp_production
-  username: recipeapp
-  password: <%= ENV["RECIPEAPP_DATABASE_PASSWORD"] %>
+  username: postgres
+  password: ankara
