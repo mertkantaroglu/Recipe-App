@@ -1,0 +1,26 @@
+<section>
+  <h1>Added Food</h1>
+
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @food.name %></td>
+        <td><%= @food.measurement_unit %></td>
+        <td><%= @food.price %></td>
+        <td><%= @food.quantity %></td>
+        <td><%= button_to 'Delete', @food, method: :delete, data: { turbo: false }, class: "btn btn-sm btn-danger" %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to "Back to foods", foods_path, class: 'btn btn-secondary' %>
+</section>
