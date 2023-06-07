@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: %i[ show edit update destroy ]
+  before_action :set_food, only: %i[show edit update destroy]
 
   # GET /foods or /foods.json
   def index
@@ -25,7 +25,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to food_url(@food), notice: "Food was successfully created." }
+        format.html { redirect_to food_url(@food), notice: 'Food was successfully created.' }
         format.json { render :show, status: :created, location: @food }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,12 +39,11 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
 
     respond_to do |format|
-
       if @food.destroy
-        format.html { redirect_to foods_url, notice: "Food was successfully destroyed." }
+        format.html { redirect_to foods_url, notice: 'Food was successfully destroyed.' }
         format.json { head :no_content }
       else
-        format.html { render :new, alert: 'An error has occured while deleting food'}
+        format.html { render :new, alert: 'An error has occured while deleting food' }
       end
     end
   end

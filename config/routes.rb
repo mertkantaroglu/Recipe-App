@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/shopping_lists', to: 'shopping_lists#index'
 
-  resources :users, only: [:index, :show] do
+  resources :users, only: %i[index show] do
     resources :foods, only: %i[index new create destroy]
   end
 
