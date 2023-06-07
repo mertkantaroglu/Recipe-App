@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Recipes</h1>
+
+<div id="recipes">
+<% if @recipes.empty? %>
+  <p>No recipes available for this user</p>
+<% else %>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Preparation Time</th>
+        <th scope="col">Cooking Time</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+
+  <% @recipes.each_with_index do |recipe, index| %>
+    
+    <%= render partial: 'recipe', locals: { recipe: recipe, index: index } %>
+
+  <% end %>
+
+    </tbody>
+  </table>
+
+<% end %>
+</div>
+
+<%= link_to "Add New recipe", new_recipe_path %>
