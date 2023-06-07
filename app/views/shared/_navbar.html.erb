@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div><%= link_to 'Recipe App', root_path, class: "btn btn-outline-dark" %></div>
+    <ul class='d-flex flex-row justify-content-center align-items-center list-unstyled'>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Food', foods_path, class: "btn btn-outline-secondary" %></li>
+        <li><%= link_to 'Recipes', recipes_path, class: "btn btn-outline-secondary" %></li>
+        <li><%= link_to 'Public Recipes', public_recipes_path, class: "btn btn-outline-secondary" %></li>
+        <li><%= link_to 'Shopping Lists', shopping_lists_path, class: "btn btn-outline-secondary" %></li>
+        <li><%= render partial: 'shared/logout' %></li>
+      <% else %>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
