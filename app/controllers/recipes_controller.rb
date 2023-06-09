@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_recipe, only: %i[ show edit update destroy ]
+  before_action :set_recipe, only: %i[show edit update destroy]
   before_action :recipe_created_notice, only: :create
   before_action :recipe_destroyed_notice, only: :destroy
 
@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe successfully created'}
+        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe successfully created' }
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -62,21 +62,22 @@ class RecipesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_recipe
-      @recipe = Recipe.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def recipe_params
-      params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
-    def recipe_created_notice
-      flash.now[:notice] = 'Recipe was successfully created.'
-    end
+  # Only allow a list of trusted parameters through.
+  def recipe_params
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+  end
 
-    def recipe_destroyed_notice
-      flash.now[:notice] = 'Recipe was successfully destroyed.'
-    end
+  def recipe_created_notice
+    flash.now[:notice] = 'Recipe was successfully created.'
+  end
+
+  def recipe_destroyed_notice
+    flash.now[:notice] = 'Recipe was successfully destroyed.'
+  end
 end
