@@ -1,10 +1,13 @@
-<div id="<%= dom_id recipe %>">
-    <tr>
-      <th scope="row"><%= index + 1 %></th>
-      <td><%= recipe.name %></td>
-      <td><%= recipe.preparation_time %></td>
-      <td><%= recipe.cooking_time %></td>
-      <td class="text-truncate" style="max-width: 50px;"><%= recipe.description %></td>
-      <td><%= link_to "Show this recipe", recipe %></td>
-    </tr>
-  
+<div id="<%= dom_id recipe %>" class="d-flex flex-row p-3 m-3 border border-dark rounded">
+  <div class="d-flex flex-column me-5">
+    <p><%= recipe.name %></p>
+    <div class="d-flex flex-row gap-3 justify-content-start">
+      <button class="btn btn-link"><%= button_to "REMOVE", recipe, method: :delete %></button>
+      <p><%= link_to "DETAILS", recipe %></p>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center flex-grow-1 ms-5">
+    <p><%= recipe.description %></p>
+  </div>
+</div>

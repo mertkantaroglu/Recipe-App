@@ -7,26 +7,11 @@
   <p>No recipes available for this user</p>
 <% else %>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Preparation Time</th>
-        <th scope="col">Cooking Time</th>
-        <th scope="col">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-
   <% @recipes.each_with_index do |recipe, index| %>
     
     <%= render partial: 'recipe', locals: { recipe: recipe, index: index } %>
 
   <% end %>
-
-    </tbody>
-  </table>
 
 <% end %>
 </div>
