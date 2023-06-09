@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @shopping_lists = []
   end
 
   def update_public

@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Recipes</h1>
+<h1>My Recipes</h1>
 
 <div id="recipes">
 <% if @recipes.empty? %>
@@ -8,7 +8,7 @@
 <% else %>
 
   <% @recipes.each_with_index do |recipe, index| %>
-    
+
     <%= render partial: 'recipe', locals: { recipe: recipe, index: index } %>
 
   <% end %>
