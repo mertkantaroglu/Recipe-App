@@ -21,7 +21,7 @@
   </div>
   <br>
   <div class="d-flex justify-content-center">
-    <button class="btn btn-light btn-lg mx-5" >Generate shopping list</button>
+    <button class="btn btn-success btn-lg mx-5" >Generate shopping list</button>
     <% if current_user.owner? @recipe || @recipe.public === true%>
       <button class="btn btn-success btn-lg mx-5" >
         <%= link_to 'Add ingredient', new_recipe_food_path(recipe_id: @recipe.id),  class: "text-white text-decoration-none"  %>
