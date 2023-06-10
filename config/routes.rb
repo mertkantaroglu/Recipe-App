@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'foods#index'
+  root 'home#index'
 
   patch 'recipes/:id/update_public', to: 'recipes#update_public', as: 'recipe_update_public'
 
