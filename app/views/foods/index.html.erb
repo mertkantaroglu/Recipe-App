@@ -10,8 +10,8 @@
       <tr>
         <th>Food Name</th>
         <th>Measurement Unit</th>
-        <th>Unit Price</th>
         <th>Quantity</th>
+        <th>Unit Price</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -20,8 +20,8 @@
         <tr>
           <td><%= food.name %></td>
           <td><%= food.measurement_unit %></td>
-          <td>$<%= food.price %></td>
           <td><%= food.quantity %></td>
+          <td>$ <%= food.price %></td>
           <td><%= button_to 'Delete', food, method: :delete, data: { turbo: false } , class: "btn btn-sm btn-danger" %></td>
         </tr>
       <% end %>
