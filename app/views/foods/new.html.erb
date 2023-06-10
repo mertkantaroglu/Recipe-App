@@ -1,5 +1,5 @@
 <section>
-  <h1>New food</h1>
+  <h1 class="text-center fw-bold">New Food</h1>
   <br>
 
   <div>
@@ -8,31 +8,31 @@
     <div>
       <%= form.text_field :name,
       placeholder: 'Enter the food name',
-      class: 'form-control' %>
+      class: 'form-control food-form' %>
     </div>
 
     <div>
       <%= form.text_field :measurement_unit,
       placeholder: 'Enter the measurement unit. Eg. grams, pounds, cups',
-      class: 'form-control' %>
+      class: 'form-control food-form' %>
     </div>
 
     <div>
       <%= form.number_field :price,
       placeholder: 'Enter the price. Eg. 10.00',
-      class: 'form-control' %>
+      class: 'form-control food-form' %>
     </div>
 
     <div>
       <%= form.number_field :quantity,
       placeholder: 'Enter the quantity',
-      class: 'form-control' %>
+      class: 'form-control food-form' %>
     </div>
 
     <%= form.hidden_field :user_id, value: current_user.id %>
 
     <div>
-      <%= form.submit 'Add Food', class: 'btn btn-success' %>
+      <%= form.submit 'Add Food', class: 'btn btn-primary' %>
     </div>
     <br>
 

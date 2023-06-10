@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>My Recipes</h1>
+<h1 class="text-center fw-bold">My Recipes</h1>
+<br>
 
 <div id="recipes">
 <% if @recipes.empty? %>
@@ -16,4 +17,4 @@
 <% end %>
 </div>
 
-<%= link_to "Add New Recipe", new_recipe_path %>
+<%= link_to "Add New Recipe", new_recipe_path, class:'btn btn-primary add-recipe-btn' %>

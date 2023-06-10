@@ -13,30 +13,30 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:'form-control recipe-form' %>
   </div>
 
   <div>
     <%= form.label :preparation_time, style: "display: block" %>
-    <%= form.text_field :preparation_time %>
+    <%= form.text_field :preparation_time, class:'form-control recipe-form'  %>
   </div>
 
   <div>
     <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.text_field :cooking_time %>
+    <%= form.text_field :cooking_time, class:'form-control recipe-form'  %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class:'form-control recipe-form'  %>
   </div>
 
   <div>
     <%= form.label :public, style: "display: block" %>
-    <%= form.check_box :public %>
+    <%= form.check_box :public, class: 'recipe-form public-check' %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'Create Recipe', class:'btn btn-primary' %>
   </div>
 <% end %>

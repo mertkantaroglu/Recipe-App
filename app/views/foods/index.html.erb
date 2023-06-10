@@ -1,9 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <section>
-  <h1>Your Food List</h1>
+  <h1 class="text-center fw-bold">Your Food List</h1>
   <br>
-  <%= link_to 'Add Food', new_user_food_path(current_user), class: 'btn btn-outline-primary'%>
+  <%= link_to 'Add New Food', new_user_food_path(current_user), class: 'btn btn-outline-primary add-food-btn'%>
 
   <table class='table table-bordered table-striped'>
     <thead>
