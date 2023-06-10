@@ -1,0 +1,45 @@
+<section>
+  <h1 class="text-center fw-bold">New Food</h1>
+  <br>
+
+  <div>
+    <%= form_with model: [@user, @food], url: user_foods_path(current_user) do |form| %>
+
+    <div>
+      <%= form.text_field :name,
+      placeholder: 'Enter the food name',
+      class: 'form-control food-form' %>
+    </div>
+
+    <div>
+      <%= form.text_field :measurement_unit,
+      placeholder: 'Enter the measurement unit. Eg. grams, pounds, cups',
+      class: 'form-control food-form' %>
+    </div>
+
+    <div>
+      <%= form.number_field :price,
+      placeholder: 'Enter the price. Eg. 10.00',
+      class: 'form-control food-form' %>
+    </div>
+
+    <div>
+      <%= form.number_field :quantity,
+      placeholder: 'Enter the quantity',
+      class: 'form-control food-form' %>
+    </div>
+
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <div>
+      <%= form.submit 'Add Food', class: 'btn btn-primary' %>
+    </div>
+    <br>
+
+    <div>
+      <%= link_to "Back to foods", foods_path, class: "btn btn-secondary" %>
+    </div>
+
+    <% end %>
+  </div>
+</section>

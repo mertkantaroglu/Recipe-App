@@ -1,0 +1,10 @@
+<div id="<%= dom_id recipe %>">
+    <tr>
+      <th scope="row"><%= index + 1 %></th>
+      <td><%= recipe.name %></td>
+      <td><%= recipe.preparation_time %></td>
+      <td><%= recipe.cooking_time %></td>
+      <td class="text-truncate" style="max-width: 50px;"><%= recipe.description %></td>
+      <td><%= link_to "Show this recipe", recipe %></td>
+    </tr>
+  

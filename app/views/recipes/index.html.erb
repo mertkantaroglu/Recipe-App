@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center fw-bold">My Recipes</h1>
+<br>
+
+<div id="recipes">
+<% if @recipes.empty? %>
+  <p>No recipes available for this user</p>
+<% else %>
+
+  <% @recipes.each_with_index do |recipe, index| %>
+
+    <%= render partial: 'recipe', locals: { recipe: recipe, index: index } %>
+
+  <% end %>
+
+<% end %>
+</div>
+
+<%= link_to "Add New Recipe", new_recipe_path, class:'btn btn-primary add-recipe-btn' %>

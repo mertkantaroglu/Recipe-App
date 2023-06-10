@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<section>
+  <h1 class="text-center fw-bold">Your Food List</h1>
+  <br>
+  <%= link_to 'Add New Food', new_user_food_path(current_user), class: 'btn btn-outline-primary add-food-btn'%>
+
+  <table class='table table-bordered table-striped'>
+    <thead>
+      <tr>
+        <th>Food Name</th>
+        <th>Measurement Unit</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= food.quantity %></td>
+          <td>$ <%= food.price %></td>
+          <td><%= button_to 'Delete', food, method: :delete, data: { turbo: false } , class: "btn btn-sm btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

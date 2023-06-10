@@ -1,0 +1,14 @@
+<div id="<%= dom_id recipe %>" class="d-flex justify-content-between rounded shadow p-5 border-dark  w-75 mx-auto">
+  <div>
+    <h3><strong><%= recipe.name %></strong></h3>
+    <div class='button-container'>
+      <%= link_to "DETAILS", recipe, class:"btn btn-primary" %>
+      <%= button_to "REMOVE", recipe, method: :delete, class:'btn btn-outline-danger' %>
+    </div>
+  </div>
+
+  <div>
+    <p><%= recipe.description %></p>
+  </div>
+</div>
+<br>

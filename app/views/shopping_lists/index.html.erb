@@ -1,0 +1,32 @@
+<section>
+  <h1 class="text-center">Shopping List For <%= @recipe.name %></h1>
+  <br>
+
+  <div class='d-flex justify-content-between'>
+    <h3>Amount of food items to buy: <%= @total_count %></h3>
+    <h3>Total value of food needed: $ <%= @sum %></h3>
+  </div>
+  <br>
+
+  <table class='table table-bordered table-striped'>
+    <thead>
+      <tr class="text-center">
+        <th>Food Name</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shopping_lists.each do |shopping_list| %>
+        <tr>
+          <td><%= shopping_list.food.name %></td>
+          <td><%= shopping_list.quantity %> <%= shopping_list.food.measurement_unit %></td>
+          <td>$ <%= shopping_list.food.price %></td>
+          <td>$ <%= shopping_list.food.price * shopping_list.quantity%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Back", public_recipes_path, class: 'btn btn-secondary' %>
+</section>

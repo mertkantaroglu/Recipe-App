@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class='recipe-app-btn'>
+    <div><%= link_to 'Recipe App', root_path, class: "btn btn-dark" %></div>
+    <ul class='d-flex flex-row list-unstyled'>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Food', foods_path, class: "btn btn-outline-primary" %></li>
+        <li><%= link_to 'My Recipes', recipes_path, class: "btn btn-outline-primary" %></li>
+        <li><%= link_to 'Public Recipes', public_recipes_path, class: "btn btn-outline-primary" %></li>
+        <% if defined?(@recipe) && @recipe.persisted? %>
+          <li><%= link_to 'Shopping Lists', recipe_shopping_lists_path(@recipe), class: "btn btn-outline-primary" %></li>
+        <% end %>
+
+        <li><%= render partial: 'shared/logout' %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
