@@ -12,7 +12,6 @@ RSpec.describe Food, type: :model do
   describe 'Testing validations' do
     it 'should be validates' do
       expect(@food).to be_valid
-
     end
 
     it 'should have a name for food' do

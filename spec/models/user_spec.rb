@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     User.create(name: 'Mert', email: 'mk@gmail.com', password: 'mert1234')
   end
 
-  before {subject.save}
+  before { subject.save }
 
   it 'should have a user name' do
     expect(subject.name).to eql 'Mert'
